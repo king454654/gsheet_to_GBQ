@@ -4,13 +4,15 @@ steps:
     args:
       - '-c'
       - |
-        pip install -r requirement.txt
-        python main.py
+        pip install -r requirements.txt  # Install dependencies
+        python main.py  # Run your script
 
-logsBucket: gs://gsheet-to-gbq-logs-12345
+logsBucket: gs://gsheet-to-gbq-logs-12345  # Replace with your actual GCS bucket for logs
 
-options:
-  logging: GCS_ONLY
-  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+artifacts:
+  objects:
+    location: gs://gsheet-to-gbq-logs-12345/output/  # Adjust path as needed
+    paths: 
+      - output_file.csv  # Replace with actual output files
 
-serviceAccount: task-725@gsheet-to-gbq.iam.gserviceaccount.com
+timeout: 900s  # Set timeout (15 minutes)
