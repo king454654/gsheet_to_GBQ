@@ -1,1 +1,4 @@
+options:
+  logging: GCS_ONLY
+logsBucket: gs://your-logs-bucket
 
