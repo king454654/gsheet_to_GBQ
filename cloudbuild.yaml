@@ -1,7 +1,11 @@
 steps:
   - name: 'python:3.12'
-    entrypoint: 'python'
-    args: ['main.py']
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        pip install -r requirement.txt
+        python main.py
 
 logsBucket: gs://gsheet-to-gbq-logs-12345
 
