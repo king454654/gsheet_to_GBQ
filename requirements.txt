@@ -1,0 +1,7 @@
+functions-framework
+flask
+google-cloud-storage
+google-cloud-bigquery
+gspread
+pandas
+pyarrow
