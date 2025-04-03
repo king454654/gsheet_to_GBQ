@@ -2,3 +2,11 @@ steps:
   - name: 'python:3.12'
     entrypoint: 'python'
     args: ['main.py']
+
+logsBucket: gs://your-logs-bucket  # Replace with your actual GCS bucket for logs
+
+options:
+  logging: GCS_ONLY  # Options: GCS_ONLY, CLOUD_LOGGING_ONLY, or NONE
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+
+serviceAccount: task-725@gsheet-to-gbq.iam.gserviceaccount.com  # Replace with your service account
