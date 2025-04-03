@@ -1,4 +1,4 @@
-options:
-  logging: GCS_ONLY
-logsBucket: gs://your-logs-bucket
-
+steps:
+  - name: 'python:3.12'
+    entrypoint: 'python'
+    args: ['main.py']
